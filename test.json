@@ -1,0 +1,101 @@
+{
+    "NextSetRequestData": null,
+    "FirstRowDataForEachPage": [],
+    "Data": [
+    {
+    "Level 2 Category": "CORPORATE SERVICES",
+    "Spend In USD": 1494099.9459773074
+    },
+    {
+    "Level 2 Category": "BUILDING MATERIALS & PRODUCTS",
+    "Spend In USD": 1364938.6020859643
+    },
+    {
+    "Level 2 Category": "METALS",
+    "Spend In USD": 515913.69122623495
+    },
+    {
+    "Level 2 Category": "PLASTICS",
+    "Spend In USD": 325166.33267992089
+    },
+    {
+    "Level 2 Category": "OTHER",
+    "Spend In USD": 290217.51559143496
+    },
+    {
+    "Level 2 Category": "WOODS",
+    "Spend In USD": 253743.28355900015
+    },
+    {
+    "Level 2 Category": "PROFESSIONAL SERVICES",
+    "Spend In USD": 129396.41
+    },
+    {
+    "Level 2 Category": "PACKAGING",
+    "Spend In USD": 124933.41718817897
+    },
+    {
+    "Level 2 Category": "LOGISTICS",
+    "Spend In USD": 114358.31277250816
+    },
+    {
+    "Level 2 Category": "CHEMICALS",
+    "Spend In USD": 113085.09000000001
+    },
+    {
+    "Level 2 Category": "INDUSTRIAL SUPPLIES/ MRO",
+    "Spend In USD": 98622.368510550223
+    },
+    {
+    "Level 2 Category": "TRAVEL & ENTERTAINMENT",
+    "Spend In USD": 87080.741011642051
+    },
+    {
+    "Level 2 Category": "SALES & MARKETING",
+    "Spend In USD": 44720.010830999985
+    },
+    {
+    "Level 2 Category": "MACHINERY & EQUIPMENT",
+    "Spend In USD": 40898.119640000012
+    },
+    {
+    "Level 2 Category": "ENERGY & UTILITIES",
+    "Spend In USD": 36290.181743999994
+    },
+    {
+    "Level 2 Category": "IT",
+    "Spend In USD": 20485.5611725
+    },
+    {
+    "Level 2 Category": "INTERCOMPANY",
+    "Spend In USD": 7590.0
+    },
+    {
+    "Level 2 Category": "(QA IN PROGRESS)",
+    "Spend In USD": 1927.0
+    },
+    {
+    "Level 2 Category": "SALARIES/ BENEFITS/ ALLOWANCES",
+    "Spend In USD": 1900.0
+    },
+    {
+    "Level 2 Category": "REBATES/ BONUS",
+    "Spend In USD": 1536.880185
+    },
+    {
+    "Level 2 Category": "CONTRACTOR SERVICES",
+    "Spend In USD": 1350.98
+    },
+    {
+    "Level 2 Category": "OTHER NON PROCURABLE",
+    "Spend In USD": 760.26
+    },
+    {
+    "Level 2 Category": "MISCELLANEOUS EXPENSES",
+    "Spend In USD": 26.07
+    }
+    ],
+    "PageSize": 0,
+    "TotalRowCount": 0,
+    "GrandTotal": null
+    }
