@@ -2,18 +2,24 @@
   "name": "serverSideExport",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "multipleImageServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon -r esm multipleImageServer.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
+    "express-winston": "^4.1.0",
     "highcharts-export-server": "^2.1.0",
     "morgan": "^1.10.0",
-    "pdf-to-base64": "^1.0.3"
+    "nodemon": "^2.0.9",
+    "pdf-to-base64": "^1.0.3",
+    "pptxgenjs": "^3.6.0",
+    "winston": "^3.3.3"
   }
 }
