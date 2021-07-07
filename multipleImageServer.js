@@ -1,10 +1,12 @@
 import pptxgen from "pptxgenjs";
+import { jsPDF } from "jspdf";
 const exporter = require("highcharts-export-server");
 const express = require("express");
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const app = express();
 const dotenv = require("dotenv");
+var sizeOf = require('image-size');
 
 const PORT = 8000
 app.listen(8000, () => {
@@ -82,13 +84,13 @@ const exportLoop = (reqJSONArray)=>{
     return new Promise((resolve, reject)=>{
         const toBeDone = reqJSONArray.length;
         var done = 0;
-        var resultArray = [];
+        var resultArray = new Array(toBeDone);
         for(let i = 0; i < toBeDone; i++){
             var rawData = reqJSONArray[i];
             var exportSettings = getExportSettings(rawData);
             
             exportToImg(exportSettings).then(response => {
-                resultArray.push(response);
+                resultArray[i] = response;
                 console.log("done", i);
                 done += 1;
                 if(done === toBeDone){
@@ -105,22 +107,39 @@ const exportLoop = (reqJSONArray)=>{
 }
 
 const exportToPPT = (imgArrayBase64)=>{
+
     let pres = new pptxgen();
 
-    // 2. Add a Slide
-    let slide = pres.addSlide();
-
-    // 3. Add one or more objects (Tables, Shapes, Images, Text and Media) to the Slide
-    // let textboxText = "Hello World from PptxGenJS!";
-    // let textboxOpts = { x: 1, y: 1, color: "363636" };
-    // slide.addText(textboxText, textboxOpts);
-    var properties = "image/png;base64,"
-    slide.addImage({  x: 0, y: 0, w:"95%", h: "95%", data: properties + imgArrayBase64[0] });
-    // 4. Save the Presentation
+    var properties = "img/png;base64,";
+    for(let i = 0; i < imgArrayBase64.length; i++){
+        let slide = pres.addSlide();
+        slide.addImage({  
+            x: 0, 
+            y: 0, 
+            w: "100%", 
+            h: "100%", 
+            data: properties + imgArrayBase64[i] 
+        });
+    }
 
     pres.writeFile();
 }
 
+const exportToPDF = (imgArrayBase64)=>{
+    // addImage(imageData, format, x, y, width, height, alias, compression, rotation)
+    const doc = new jsPDF({
+        orientation: "landscape",
+        // unit: "in",
+        // format: [4, 2]
+      });
+    
+    var img = Buffer.from(imgArrayBase64[0], 'base64');
+    var dimensions = sizeOf(img);
+    console.log(dimensions.width, dimensions.height);
+    doc.addImage(imgArrayBase64[0], 'JPEG', 0, 0, 150, 150);
+    doc.addImage(imgArrayBase64[1], 'JPEG', 150, 0, 150, 150);
+    doc.save('a4.pdf');
+}
 
 
 app.post("/", (req, res) => {
@@ -130,6 +149,7 @@ app.post("/", (req, res) => {
 
     exportLoop(reqJSONArray).then(response => {
         exportToPPT(response)
+        exportToPDF(response)
         res.json({data : response});
     }).catch(err=>{
         console.log(err);

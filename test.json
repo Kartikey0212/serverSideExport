@@ -2,6 +2,7 @@
     "NextSetRequestData": null,
     "FirstRowDataForEachPage": [],
     "type":"jpeg",
+    "scale":10,
     "options" : {
         "chart": {
             "plotBackgroundColor": null,
