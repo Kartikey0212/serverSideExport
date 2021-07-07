@@ -1,7 +1,9 @@
 import pptxgen from "pptxgenjs";
 import { jsPDF } from "jspdf";
-const exporter = require("highcharts-export-server");
-const express = require("express");
+import express from "express"
+import exporter from "highcharts-export-server"
+// const exporter = require("highcharts-export-server");
+// const express = require("express");
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const app = express();
